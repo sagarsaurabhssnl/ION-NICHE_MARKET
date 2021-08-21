@@ -17,9 +17,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 96%;
+  width: 100%;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: #482ff7;
 }
 
@@ -236,6 +236,7 @@ footer {
   align-items: center;
   justify-content: center;
   visibility: none;
+  width: 100%;
 }
 
 .tiles {
@@ -284,12 +285,11 @@ footer {
 
 .overText {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20;
+  font-size: 1.9rem;
   align-self: center;
 }
 
 .over {
-  /* position: absolute; */
   z-index: 10;
   color: #fff;
   background-color: #00000077;
@@ -303,20 +303,6 @@ footer {
 
 .img:hover .over {
   color: #fff;
-}
-
-#fileUpload {
-  /* background-color: #55b4b0;
-  border-radius: 3px;
-  border: none;
-  margin-left: 145px;
-  padding: 20px;
-  opacity: 50;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);*/
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 #main-site {

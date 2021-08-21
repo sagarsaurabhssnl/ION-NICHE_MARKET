@@ -17,6 +17,10 @@ const loginNode = document.getElementById("login");
 const signupNode = document.getElementById("signup");
 const addNode = document.getElementById("addText");
 const uploadClose = document.getElementById("upload-close");
+const forgot = document.getElementById("forgot-password");
+forgot.addEventListener("click", () => {
+
+});
 uploadClose.addEventListener("click", () => {
     uploadForm.style.visibility = "hidden";
     change("home");
@@ -154,33 +158,10 @@ function alertM(message) {
     alert.style.visibility = "visible";
 }
 
-// function uploadFile() {
-
-// }
-
-// for (let i = 0; i < 50; i++) {
-//     async function loadImage() {
-//         let count = Math.round(Math.random() * 10) + 1;
-
-//     }
-//     loadImage().then(() => {
-//         // const tile = document.getElementsByClassName("tiles");
-//         // console.log("called1");
-//         // console.log(tile.length);
-//         // for (let i = 0; i < tile.length; i++) {
-//         //     console.log("called");
-//         //     tile[i].addEventListener("click", () => { console.log(tile[i].customName); });
-//         // }
-//         // console.log(tile);
-//     });
-//     // localStorage.setItem("sagar1216Data", "Hello World");
-// }
-
 async function fetch() {
     var dataProduct = db.collection('products').where('type', '==', 'product');
     dataProduct.get().then((queryData) => {
         queryData.forEach((doc) => {
-            console.log(doc.data());
             async function generateTiles() {
                 await storage.child(doc.data().location).getDownloadURL().then(
                     (url) => {
@@ -191,12 +172,9 @@ async function fetch() {
                         var div1 = document.createElement("button");
                         div1.className = "tiles";
                         div1.customName = url;
-                        div1.onclick = () => { localStorage.setItem(url, "sagar1216iocshow"); console.log(url); change("showcase"); changeImage(url); document.getElementById("showcase-price").innerHTML = price; document.getElementById("showcase-description").innerHTML = detailProduct; document.getElementById("showcase-title").innerHTML = doc.data().name };
-                        // div1[i].addEventListener("click", () => { localStorage.setItem(div1.customName, "sagar1216iocshow"); alert(localStorage.getItem("sagar1216iocshow")); });
+                        div1.onclick = () => { change("showcase"); changeImage(url); document.getElementById("showcase-price").innerHTML = "₹ " + doc.data().price; document.getElementById("showcase-description").innerHTML = detailProduct; document.getElementById("showcase-title").innerHTML = doc.data().name };
                         var div2 = document.createElement("div");
                         div2.className = "tiles-container";
-                        // var overContainer = document.createElement("div");
-                        // over.className = "over";
                         var over = document.createElement("div");
                         over.className = "over";
                         var overText = document.createElement("div");

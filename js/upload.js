@@ -19,10 +19,10 @@ function finishUpload() {
     console.log(productName);
     console.log(productPrice);
     console.log(productDetails);
-    var fileName = document.getElementById("upload-file").files[0].name;
+    var fileName = document.getElementById("upload-file").files[0];
     if (productName.value && productPrice.value && productDetails.value && isUploaded) {
         if (uploadInitiated) {
-            var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName;
+            var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName.name;
             db.collection("products").add({
                 name: productName.value,
                 price: productPrice.value,

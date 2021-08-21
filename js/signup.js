@@ -4,7 +4,6 @@ function initiateSignup() {
     loader.style.visibility = "visible";
     signupEmail = document.getElementById("signup-email").value;
     signupPass = document.getElementById("signup-password").value;
-    signupName = document.getElementById("signup-name").value;
     firebase.auth().createUserWithEmailAndPassword(signupEmail, signupPass)
         .then((userCredential) => {
             var user = userCredential.user;

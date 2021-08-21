@@ -1,20 +1,15 @@
-// const login = document.getElementById("login");
 var loginEmail;
 var loginPass;
 function initiateLogin() {
     loader.style.visibility = "visible";
     loginEmail = document.getElementById("login-email").value;
     loginPass = document.getElementById("login-password").value;
-    console.log(loginEmail);
     firebase.auth().signInWithEmailAndPassword(loginEmail, loginPass)
         .then((userCredential) => {
-            // Signed in
             var user = userCredential.user;
-            console.log(user);
-            loggedIn();
             change("home");
             loader.style.visibility = "hidden";
-            // ...
+            loggedIn();
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -26,7 +21,6 @@ function initiateLogin() {
 function loggedIn() {
     if (firebase.auth().currentUser) {
         if (firebase.auth().currentUser.emailVerified) {
-            console.log(firebase.auth().currentUser);
             loginNode.style.display = "none";
             signupNode.style.display = "none";
             addNode.style.display = "block"
@@ -35,7 +29,6 @@ function loggedIn() {
                 .then(() => {
                     alertM("Email verificarion sent to your email")
                 });
-
         }
     } else {
         loginNode.style.display = "block";

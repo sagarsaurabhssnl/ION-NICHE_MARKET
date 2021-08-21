@@ -1,0 +1,126 @@
+#loader-container {
+  width: 95%;
+  height: 95%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #ffffff55;
+}
+
+#loader {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #000f18; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    width: 40px;
+    height: 40px;
+  }
+  5% {
+    transform: rotate(90deg);
+    width: 35px;
+    height: 40px;
+  }
+  10% {
+    transform: rotate(180deg);
+    width: 30px;
+    height: 40px;
+  }
+  15% {
+    transform: rotate(270deg);
+    width: 30px;
+    height: 35px;
+  }
+  20% {
+    transform: rotate(360deg);
+    width: 30px;
+    height: 30px;
+  }
+  25% {
+    transform: rotate(90deg);
+    width: 35px;
+    height: 30px;
+  }
+  30% {
+    transform: rotate(180deg);
+    width: 40px;
+    height: 30px;
+  }
+  35% {
+    transform: rotate(270deg);
+    width: 40px;
+    height: 35px;
+  }
+  40% {
+    transform: rotate(360deg);
+    width: 40px;
+    height: 40px;
+  }
+  45% {
+    transform: rotate(140deg);
+    width: 40px;
+    height: 35px;
+  }
+  50% {
+    transform: rotate(140deg);
+    width: 40px;
+    height: 30px;
+  }
+  55% {
+    transform: rotate(220deg);
+    width: 35px;
+    height: 30px;
+  }
+  60% {
+    transform: rotate(140deg);
+    width: 30px;
+    height: 30px;
+  }
+  65% {
+    transform: rotate(220deg);
+    width: 30px;
+    height: 35px;
+  }
+  70% {
+    transform: rotate(140deg);
+    width: 30px;
+    height: 40px;
+  }
+  75% {
+    transform: rotate(0deg);
+    width: 35px;
+    height: 40px;
+  }
+  80% {
+    transform: rotate(0deg);
+    width: 40px;
+    height: 40px;
+  }
+  85% {
+    transform: rotate(90deg);
+    width: 35px;
+    height: 40px;
+  }
+  90% {
+    transform: rotate(-90deg);
+    width: 30px;
+    height: 40px;
+  }
+  95% {
+    transform: rotate(00deg);
+    width: 40px;
+    height: 40px;
+  }
+  100% {
+    width: 35px;
+    height: 35px;
+  }
+}

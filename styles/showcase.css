@@ -1,0 +1,126 @@
+#main-showcase {
+  /* background-color: #e6dcd0aa; */
+  background-color: #ffaaaa;
+  display: flex;
+  /* margin: 2%; */
+  margin-top: 1%;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 10px 10px 10px #00000055;
+  transition: 0.5s;
+  /* flex-direction: column; */
+  font-size: 3rem;
+}
+
+#showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+  z-index: 25;
+  background-color: khaki;
+  align-self: center;
+}
+
+#showcase-price {
+  margin: 20px;
+  width: 98%;
+}
+
+/* * {
+  border: 1px solid #000;
+} */
+
+#showcase-details {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  /* width: 100%;
+  background-color: rgb(252, 0, 0); */
+}
+
+#product-buy {
+  border: none;
+  font-size: 3rem;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #f75c12;
+  box-shadow: 5px 3px 10px rgb(0, 0, 0);
+  transition: 0.3s;
+  width: 250px;
+}
+
+#product-buy:hover {
+  box-shadow: 5px 3px 5px rgb(0, 0, 0);
+}
+
+#close {
+  float: right;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin: 10px;
+  margin-right: 10%;
+}
+
+#main-showcase:hover {
+  box-shadow: 10px 10px 10px 2px #00000099;
+}
+
+#showcase {
+  margin-top: 10px;
+}
+
+#showcase-image-container {
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  background-color: rgba(240, 230, 140, 0.535);
+  flex-direction: row;
+}
+
+#showcase-img {
+  border-radius: 10px;
+  width: 50%;
+}
+
+@media only screen and (max-width: 800px) {
+  #showcase-img {
+    width: 100%;
+  }
+
+  #showcase-image-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  #showcase-img {
+    width: 60%;
+  }
+  #showcase-image-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#orderPlaced-container {
+  background-color: #ffffff00;
+  width: 98%;
+  height: 98%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  visibility: hidden;
+}
+#orderPlaced {
+  width: 300px;
+  align-self: center;
+}

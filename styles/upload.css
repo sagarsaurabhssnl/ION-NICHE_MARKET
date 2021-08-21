@@ -1,0 +1,102 @@
+#upload-outer {
+  position: absolute;
+  width: 96%;
+  align-self: center;
+  height: 96%;
+  z-index: 15;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#upload-close {
+  font-size: large;
+  align-self: flex-end;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin: 10px;
+  margin-right: 3%;
+  color: rgb(255, 255, 255);
+}
+
+#upload-container {
+  display: flex;
+  background-color: #212121ee;
+  padding: 10px;
+  border-radius: 6px;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1000px) {
+  #upload-container {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  #upload-container {
+    width: 330px;
+    height: 500px;
+  }
+}
+
+.upload-textField {
+  height: 45px;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  align-self: center;
+  margin: 10px;
+}
+
+#upload-product-description {
+  height: 60px;
+}
+
+#upload-container-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  padding: 10px;
+  background-image: url("../assets/images/upload.png");
+  background-size: cover;
+  display: table;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  text-align: justify;
+  align-items: center;
+  align-self: center;
+  text-align: end;
+}
+
+#upload-file[type="file"] {
+  display: none;
+}
+
+#upload-data-input {
+  flex-direction: column;
+}
+
+#upload-button {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  align-self: flex-end;
+  margin-bottom: 30px;
+  background-color: #212121;
+  color: lightgreen;
+}
+
+#upload-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

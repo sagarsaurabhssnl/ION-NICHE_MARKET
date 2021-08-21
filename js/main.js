@@ -198,13 +198,14 @@ async function fetch() {
             async function generateTiles() {
                 await storage.child(doc.data().location).getDownloadURL().then(
                     (url) => {
+                        var detailProduct = doc.data().details;
                         price = "₹ " + doc.data().price;
                         var anchor = document.createElement("a");
                         anchor.href = "#body";
                         var div1 = document.createElement("button");
                         div1.className = "tiles";
                         div1.customName = url;
-                        div1.onclick = () => { localStorage.setItem(url, "sagar1216iocshow"); console.log(url); change("showcase"); changeImage(url); document.getElementById("showcase-price").innerHTML = price }; document.getElementById("showcase-description").innerHTML = doc.data().details;
+                        div1.onclick = () => { localStorage.setItem(url, "sagar1216iocshow"); console.log(url); change("showcase"); changeImage(url); document.getElementById("showcase-price").innerHTML = price; document.getElementById("showcase-description").innerHTML = detailProduct; document.getElementById("showcase-title").innerHTML = doc.data().name };
                         // div1[i].addEventListener("click", () => { localStorage.setItem(div1.customName, "sagar1216iocshow"); alert(localStorage.getItem("sagar1216iocshow")); });
                         var div2 = document.createElement("div");
                         div2.className = "tiles-container";

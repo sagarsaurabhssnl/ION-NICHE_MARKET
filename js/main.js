@@ -145,22 +145,7 @@ function changeImage(uri) {
 }
 
 function orderPlaced() {
-    if (!gif) {
-        const placeOrderContainer = document.getElementById("orderPlaced-container");
-        placeOrderContainer.style.visibility = "visible";
-        var gif = document.createElement("img");
-        gif.src = "./assets/images/orderPlaced.gif";
-        gif.id = "order-placed";
-        console.log(gif);
-        document.getElementById("orderPlaced").appendChild(gif);
-        console.log()
-        setTimeout(() => {
-            const remove = document.getElementById("order-placed");
-            remove.remove();
-            placeOrderContainer.style.visibility = "hidden";
-            change("home");
-        }, 6000);
-    }
+    alertM("OrderPlaced! Thanks for using this site.")
 }
 
 function alertM(message) {

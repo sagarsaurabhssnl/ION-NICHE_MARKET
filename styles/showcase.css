@@ -108,19 +108,3 @@
     flex-direction: column;
   }
 }
-
-#orderPlaced-container {
-  background-color: #ffffff00;
-  width: 50px;
-  height: 50px;
-  z-index: 19;
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  align-self: center;
-}
-#orderPlaced {
-  align-self: center;
-}

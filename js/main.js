@@ -19,6 +19,7 @@ const addNode = document.getElementById("addText");
 const uploadClose = document.getElementById("upload-close");
 uploadClose.addEventListener("click", () => {
     uploadForm.style.visibility = "hidden";
+    change("home");
 })
 addProduct.addEventListener("click", () => {
     change("upload");

@@ -26,7 +26,9 @@ function finishUpload() {
             details: productDetails.value,
             type: "product",
             location: location
-        })
+        });
+        alertM("Product Published");
+        change("home");
     } else {
         alert("All the fields are mandatory");
     }

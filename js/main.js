@@ -24,6 +24,7 @@ uploadClose.addEventListener("click", () => {
 addProduct.addEventListener("click", () => {
     change("upload");
     isUploaded = false;
+    uploadInitiated = false;
 })
 alertClose.addEventListener("click", () => {
     alert.style.visibility = "hidden";

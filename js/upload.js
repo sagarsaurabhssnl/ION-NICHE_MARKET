@@ -1,5 +1,7 @@
 var isUploaded = false;
+var uploadInitiated = false;
 function initiateUpload() {
+    uploadInitiated = true;
     var storageRef = firebase.storage().ref();
     var file = document.getElementById("upload-file").files[0];
     console.log(file);
@@ -19,16 +21,22 @@ function finishUpload() {
     console.log(productDetails);
     var fileName = document.getElementById("upload-file").files[0].name;
     if (productName.value && productPrice.value && productDetails.value && isUploaded) {
-        var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName;
-        db.collection("products").add({
-            name: productName.value,
-            price: productPrice.value,
-            details: productDetails.value,
-            type: "product",
-            location: location
-        });
-        alertM("Product Published");
-        change("home");
+        if (uploadInitiated) {
+            var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName;
+            db.collection("products").add({
+                name: productName.value,
+                price: productPrice.value,
+                details: productDetails.value,
+                type: "product",
+                location: location
+            });
+            alertM("Product Published");
+            change("home");
+            isUploaded = false;
+            uploadInitiated = false;
+        } else {
+            alertM("Wait for image to upload");
+        }
     } else {
         alert("All the fields are mandatory");
     }

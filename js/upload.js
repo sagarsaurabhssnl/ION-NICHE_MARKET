@@ -39,7 +39,7 @@ function finishUpload() {
                 alertM("Wait for image to upload.");
             }
         } else {
-            alertM("Select and the image.")
+            alertM("Select and add a image.")
         }
     } else {
         alert("All the fields are mandatory.");

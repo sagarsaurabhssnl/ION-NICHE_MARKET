@@ -16,11 +16,8 @@ function finishUpload() {
     const productName = document.getElementById("upload-product-name");
     const productPrice = document.getElementById("upload-product-price");
     const productDetails = document.getElementById("multiline-details");
-    console.log(productName);
-    console.log(productPrice);
-    console.log(productDetails);
     var fileName = document.getElementById("upload-file").files[0];
-    if (productName.value && productPrice.value && productDetails.value) {
+    if (productName.value !== "" && productPrice.value !== "" && productDetails.value !== "") {
         if (uploadInitiated) {
             if (uploadInitiated && isUploaded) {
                 var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName.name;
@@ -42,6 +39,6 @@ function finishUpload() {
             alertM("Select and add a image.")
         }
     } else {
-        alert("All the fields are mandatory.");
+        alertM("All the fields are mandatory.");
     }
 }

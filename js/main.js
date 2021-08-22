@@ -85,8 +85,6 @@ function resumeScroll() {
 
 // fetch();
 window.onload = () => {
-    var loader = document.getElementById("loader-container");
-    loader.style.visibility = "hidden";
     var body = document.getElementById("body");
     body.style = "height";
 
@@ -214,7 +212,10 @@ async function fetch() {
                         console.error(error);
                     });
             }
-            generateTiles();
+            generateTiles().then(() => {
+                var loader = document.getElementById("loader-container");
+                loader.style.visibility = "hidden";
+            })
 
         });
     });

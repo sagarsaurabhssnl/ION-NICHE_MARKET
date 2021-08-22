@@ -10,6 +10,11 @@
   border-radius: 10px;
 }
 
+#already-have-account {
+  color: #f00;
+  margin-top: 10px;
+}
+
 #signupForm-container {
   width: 330px;
   height: 500px;
@@ -57,7 +62,9 @@
   font-weight: bold;
   margin: 10px;
   margin-right: 10%;
-  color: #fff;
+  color: rgb(255, 0, 0);
+  box-shadow: 1px 1px 5px 1px rgb(255, 0, 0);
+  padding: 5px;
 }
 
 #signup-button {

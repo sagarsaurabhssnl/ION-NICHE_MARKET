@@ -18,8 +18,32 @@ const signupNode = document.getElementById("signup");
 const addNode = document.getElementById("addText");
 const uploadClose = document.getElementById("upload-close");
 const forgot = document.getElementById("forgot-password");
+const createAccount = document.getElementById("create-account");
+const alreadyAccount = document.getElementById("already-have-account");
+createAccount.addEventListener("click", () => {
+    change("home");
+    setTimeout(() => {
+        change("signup");
+    }, 100);
+});
+alreadyAccount.addEventListener("click", () => {
+    change("home");
+    setTimeout(() => {
+        change("login");
+    }, 100);
+});
 forgot.addEventListener("click", () => {
-
+    var resetEmail = document.getElementById("login-email").value;
+    if (resetEmail) {
+        firebase.auth().sendPasswordResetEmail(resetEmail)
+            .then(() => {
+                alertM("Password reset link sent to your email.")
+            })
+            .catch((error) => {
+                var errorMessage = error.message;
+                alertM(errorMessage);
+            });
+    }
 });
 uploadClose.addEventListener("click", () => {
     uploadForm.style.visibility = "hidden";

@@ -20,24 +20,28 @@ function finishUpload() {
     console.log(productPrice);
     console.log(productDetails);
     var fileName = document.getElementById("upload-file").files[0];
-    if (productName.value && productPrice.value && productDetails.value && isUploaded) {
+    if (productName.value && productPrice.value && productDetails.value) {
         if (uploadInitiated) {
-            var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName.name;
-            db.collection("products").add({
-                name: productName.value,
-                price: productPrice.value,
-                details: productDetails.value,
-                type: "product",
-                location: location
-            });
-            alertM("Product Published");
-            change("home");
-            isUploaded = false;
-            uploadInitiated = false;
+            if (uploadInitiated && isUploaded) {
+                var location = (firebase.auth().currentUser.uid).toString() + "/" + fileName.name;
+                db.collection("products").add({
+                    name: productName.value,
+                    price: productPrice.value,
+                    details: productDetails.value,
+                    type: "product",
+                    location: location
+                });
+                alertM("Product Published.");
+                change("home");
+                isUploaded = false;
+                uploadInitiated = false;
+            } else {
+                alertM("Wait for image to upload.");
+            }
         } else {
-            alertM("Wait for image to upload");
+            alertM("Select and the image.")
         }
     } else {
-        alert("All the fields are mandatory");
+        alert("All the fields are mandatory.");
     }
 }
